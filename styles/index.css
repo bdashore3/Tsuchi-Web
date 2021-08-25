@@ -1,0 +1,13 @@
+@tailwind base;
+/* Custom classes */
+.apple-button {
+  background-color: white;
+  color: black;
+}
+
+.apple-button:hover .apple-image {
+  color: white;
+}
+
+@tailwind components;
+@tailwind utilities;
