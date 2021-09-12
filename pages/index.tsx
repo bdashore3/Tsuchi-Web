@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Home from '../components/index/home';
+import UserPage from './me';
 
 export default function IndexPage() {
   return (
@@ -7,7 +8,7 @@ export default function IndexPage() {
       <Head>
         <title>Tsuchi</title>
       </Head>
-      <Home />
+      <UserPage />
     </>
   );
 }

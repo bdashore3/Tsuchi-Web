@@ -1,5 +1,7 @@
 import { auth, Providers } from '../../config/firebase';
 import Router from 'next/router';
+import axios from 'axios';
+import ApiRequester from '../../config/axios';
 
 export default function GoogleButton() {
   async function signInWithGoogle() {
@@ -10,10 +12,12 @@ export default function GoogleButton() {
         throw new Error("A user wasn't returned!");
       }
 
-      console.log(result);
-      Router.push('/login');
+      await ApiRequester.put('/register');
+
+      Router.push('/me');
     } catch (err) {
       console.log(err);
+      throw new Error('Random server error.');
     }
   }
 
